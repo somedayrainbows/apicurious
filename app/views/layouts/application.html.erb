@@ -9,6 +9,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse">
+      <div class="container">
+        <%= link_to "apicurious", '#', id: "logo" %>
+        <nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Home", '#' %></li>
+            <li><%= link_to "Login", github_login_path unless current_user %><%= link_to "Logout", signout_path if current_user %></li>
+            <li><%= link_to "Account", '#' %></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+      <%= render 'layouts/footer' %>
+    </div>
   </body>
 </html>
