@@ -1,15 +1,18 @@
 class SessionsController < ApplicationController
 
   def create
-    auth = request.env["omniauth.auth"]
-    user = User.find_by(auth["github"], auth["uid"]) || User.create_with_omniauth(auth)
-    session[:user_id] = user.id
-    redirect_to root_url, :notice => "Signed in!"
+    if user = User.from_omniauth(request.env["omniauth.auth"])
+      session[:user_id] = user.id
+    end
+    redirect_to root_path, notice: "You have successfully logged in."
+      # user = User.from_omniauth(env["omniauth.auth"])
+    # session[:user_id] = user.id
+    # redirect_to root_url, notice: "Signed in!"
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, :notice => "Signed out!"
+    redirect_to root_url, notice: "You have successfully logged out."
   end
 
 end
