@@ -4,10 +4,7 @@ class SessionsController < ApplicationController
     if user = User.from_omniauth(request.env["omniauth.auth"])
       session[:user_id] = user.id
     end
-    redirect_to root_path, notice: "You have successfully logged in."
-      # user = User.from_omniauth(env["omniauth.auth"])
-    # session[:user_id] = user.id
-    # redirect_to root_url, notice: "Signed in!"
+    redirect_to root_path, notice: "Logged in successfully!"
   end
 
   def destroy

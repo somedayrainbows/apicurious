@@ -20,11 +20,12 @@
           </ul>
         </nav>
       </div>
-      <% flash.each do |name, msg| %>
-        <%= content_tag :div, msg, id: "flash_#{name}" %>
-      <% end %>
     </header>
     <div class="container">
+      <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+      <% end %>
+        <br><br>
       <%= yield %>
       <%= render 'layouts/footer' %>
     </div>

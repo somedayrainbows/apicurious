@@ -17,10 +17,10 @@ class User < ApplicationRecord
     #   user.name = auth["info"]["name"]
     # end
 
-  def self.create_from_omniauth(auth)
-    create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"]
-      user.name = auth["info"]["name"]
+  # def self.create_from_omniauth(auth)
+  #   create! do |user|
+  #     user.provider = auth["provider"]
+  #     user.uid = auth["uid"]
+  #     user.name = auth["info"]["name"]
 
 end
