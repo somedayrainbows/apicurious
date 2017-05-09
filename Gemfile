@@ -28,6 +28,8 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'figaro'
 gem 'faraday'
+gem 'database_cleaner'
+gem 'awesome_print', require: 'ap'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
