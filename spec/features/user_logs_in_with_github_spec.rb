@@ -11,5 +11,6 @@ RSpec.feature "user can log in" do
     expect(current_path).to eq(root_path)
     expect(page).to have_content("Logged in successfully!")
     expect(page).to have_link("Logout")
+    expect(page).to have_content("Welcome, Erin")
   end
 end

@@ -7,9 +7,6 @@ describe GithubService do
   #   @service = GithubService.new
 
 
-    end
-
-
   end
 
 
