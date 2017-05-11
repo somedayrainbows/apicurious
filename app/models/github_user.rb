@@ -11,11 +11,11 @@ class GithubUser
   end
 
   def followers
-    #should return an array of followers
+    #should return an array of followers.count
   end
 
   def following
-    #should return an array of users following you
+    #should return an array of users following you.count
   end
 
 end
