@@ -1,16 +1,56 @@
 
+<!-- <div class="container-fluid"> -->
     <div class="row">
-      <div align="center" class="col-md-6">
-        <p align="center" id="avatar"><%= image_tag "https://avatars2.githubusercontent.com/u/#{current_user.uid}?v=3&amp;s=150" %></p>
-        <h2>Welcome, <%= current_user.name %></h2>
-        <p align="center">Username: <%= current_user.username %></p>
-		  </div>
+      <!-- <div class="col-md-5" id="profile"> -->
+        <div class="col-md-3" class="card" style="width: 25rem;" id="profile">
+          <%= image_tag "https://avatars2.githubusercontent.com/u/#{current_user.uid}?v=3&amp;s=220" %>
+          <div class="card-block">
+            <h4 class="card-title">Welcome,<br><%= current_user.name %>!</h4>
+            <p class="card-text" align="left">You have <b><%= @followers %></b> followers.</p>
+            <p>You are following <b><%= @following %></b> other users.</p>
+          </div>
+        </div>
 
-      <div class="profile" class="col-md-6 ">
-		  	<h2>Repositories</h2>
-        <p>Starred: <%= @repo_count %></p>
-        <p>Total: <%= @repos.count %></p>
+        <div class="col-md-2" style="width: 10rem;">
+          <div class="card-block">
+            <h4 class="card-title"></h4>
+            <p class="card-text" align="left"></p>
+          </div>
+        </div>
 
-		 		<p>Ut tristique adipiscing mauris, sit amet suscipit metus porta quis. Donec dictum tincidunt erat, eu blandit ligula. Nam sit amet dolor sapien. Quisque velit erat, congue sed suscipit vel, feugiat sit amet enim.</p>
+        <div class="col-md-7" class="card text-center" id="toggle">
+          <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" data-toggle="tab" href="#home">Repositories</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#orgs">My organizations</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" data-toggle="tab" href="#messages">Activity feeds</a>
+              </li>
+            </ul>
+
+          <!-- Tab panes -->
+        <div class="tab-content">
+          <div class="tab-pane active" id="home" role="tabpanel"><h4 class="card-title">Repository stats</h4>
+          <p class="card-text"><p>Starred: <%= @repo_count %></p>
+          <p>Total: <%= @repos.count %></p></p>
+          <a href="/user/repos" class="btn btn-primary">Repository details</a></div>
+
+          <div class="tab-pane" id="orgs" role="tabpanel"><h4 class="card-title">More</h4>
+          <p class="card-text"><p>Starred: <%= @repo_count %></p>
+          <p>Total: <%= @repos.count %></p></p>
+        </div>
+
+          <div class="tab-pane" id="messages" role="tabpanel"><h4 class="card-title">Other things</h4>
+          <p class="card-text"><p>Starred: <%= @repo_count %></p>
+          <p>Total: <%= @repos.count %></p></p>
+        </div>
       </div>
+    </div>
+
+    <div class="row">
+      <p>stuff</p>
     </div>
