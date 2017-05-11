@@ -40,7 +40,7 @@ def stub_omniauth
   VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :webmock
-  config.filter_sensitive_data('<>') { ENV[''] }
+  config.filter_sensitive_data('<GITHUB_USER_TOKEN>') { ENV['github_user_token'] }
   # this replaces sensitive data when recording to cassettes
 end
 # Add additional requires below this line. Rails is not loaded until this point!

@@ -9,10 +9,10 @@ class GithubService
     JSON.parse(response.body, symbolize_names: true)
   end
 
-
   private
 
   def conn
     @_conn
   end
+  
 end

@@ -13,14 +13,4 @@ describe GithubService do
       expect(repos.first[:owner]).to be_a(Hash)
     end
   end
-
-
-
-  end
-
-
-
-
-  # context ".users_by(filter)" do
-  #   it "returns "
-  # end
+end

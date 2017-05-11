@@ -13,7 +13,13 @@ RSpec.feature "when logged in" do
     expect(page).to have_content("Erin Bassity")
     expect(stub_omniauth.info.nickname).to eq("somedayrainbows")
     expect(page).to have_content("somedayrainbows")
+    expect(page).to have_css("img[src*='https://avatars2.githubusercontent.com/u/#{stub_omniauth.uid}']")
   end
+
+  scenario "user can see number of starred repos" do
+
+  end
+
+    # number of starred repos, followers, following
 end
 #
-# View basic information about my account (profile pic, number of starred repos, followers, following)
