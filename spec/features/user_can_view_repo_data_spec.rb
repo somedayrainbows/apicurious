@@ -1,8 +1,8 @@
 require 'rails_helper'
 
-describe "when logged in" do
-  xit "user can view repo data" do
-    VCR.use_cassette("repo_view") do
+RSpec.feature "when logged in" do
+  scenario "user can view repo data" do
+    VCR.use_cassette("repo_view", record: :new_episodes) do
       stub_omniauth
       visit root_path
       click_link('Login')
@@ -12,7 +12,6 @@ describe "when logged in" do
       expect(current_path).to eq('/user/repos')
       expect(page).to have_content("ralesengine")
       expect(page).to have_content("career-development-curriculum")
-
     #check for css class and check for # repos, etc.
     end
   end

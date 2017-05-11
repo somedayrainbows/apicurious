@@ -10,18 +10,4 @@ class User < ApplicationRecord
       new_user.oauth_token_secret = auth_hash.credentials.secret
     end
   end
-
-    # where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
-    # create! do |user|
-    #   user.provider = auth["github"]
-    #   user.uid = auth["uid"]
-    #   user.name = auth["info"]["name"]
-    # end
-
-  # def self.create_from_omniauth(auth)
-  #   create! do |user|
-  #     user.provider = auth["provider"]
-  #     user.uid = auth["uid"]
-  #     user.name = auth["info"]["name"]
-
 end
