@@ -8,9 +8,9 @@ RSpec.feature "user can log in" do
     click_link('Login')
 
     expect(page.status_code).to eq(200)
-    expect(current_path).to eq(root_path)
+    expect(current_path).to eq(user_path)
     expect(page).to have_content("Logged in successfully!")
     expect(page).to have_link("Logout")
-    expect(page).to have_content("Welcome, Erin")
+    expect(page).to have_content("Welcome, Erin Bassity")
   end
 end

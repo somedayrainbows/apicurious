@@ -25,17 +25,24 @@ def stub_omniauth
   OmniAuth.config.test_mode = true
   OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({
     provider: "github",
-    info: {
-      user_id: "1234",
-      name: "Erin",
-      nickname: "heyhey"
-    },
-    credentials: {
-      token: "pizza",
-      secret: "secretpizza"
-    }
+    uid: "1234",
+      info: {
+        name: "Erin Bassity",
+        nickname: "somedayrainbows"
+      },
+      credentials: {
+        token: ENV['github_user_token'],
+        secret: "secretpizza"
+      }
     })
   end
+
+  VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :webmock
+  config.filter_sensitive_data('<>') { ENV[''] }
+  # this replaces sensitive data when recording to cassettes
+end
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
