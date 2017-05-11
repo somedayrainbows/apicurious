@@ -1,15 +1,10 @@
 class SessionsController < ApplicationController
 
   def create
-    user = User.find_or_create_by(provider: auth_hash[:provider], uid: auth_hash[:uid]) do |user|
-      user.name = auth_hash[:info][:name]
+    if user = User.from_omniauth(auth_hash)
+      session[:user_id] = user.id
     end
-    session[:user_id] = user.id
-
-    # if user = User.from_omniauth(auth_hash)
-    #   session[:user_id] = user.id
-    # end
-    redirect_to root_path, notice: "Logged in successfully!"
+      redirect_to user_path, notice: "Logged in successfully!"
   end
 
   def destroy

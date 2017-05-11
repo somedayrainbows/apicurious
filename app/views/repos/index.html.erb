@@ -1,0 +1,4 @@
+<h1><%= current_user.name %>'s Repositories</h2>
+<% @repos.each do |repo| %>
+<%= repo.name %><br>
+<% end %>
