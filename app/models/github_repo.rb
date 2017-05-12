@@ -1,5 +1,5 @@
 class GithubRepo
-  attr_reader :name, :service
+  attr_reader :name
 
   def initialize(repo)
     @name = repo[:name]
@@ -10,13 +10,20 @@ class GithubRepo
     #returns an array of hashes so we have to turn each hash into an object
   end
 
-  def self.service(token)
-    @service ||= GithubService.new(token)
-  end
-
   def self.starred(token)
     GithubService.new(token).starred
     # should return an array of repos that are starred
   end
 
 end
+
+
+
+
+
+
+
+
+# def self.service(token)
+#   @service ||= GithubService.new(token)
+# end (:service in attr_reader too)

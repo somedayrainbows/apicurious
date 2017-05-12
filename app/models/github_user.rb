@@ -1,12 +1,7 @@
 class GithubUser
-
-  def initialize
-
-  end
-
-  # def user_find(token)
-  #   response = conn.get('/user')
-  #   JSON.parse(response.body)
+  # 
+  # def initialize
+  #
   # end
 
   def self.followers(token)
@@ -18,6 +13,7 @@ class GithubUser
     GithubService.new(token).following.map { |following| GithubUser.new }
     #should return an array of users following you.count
   end
+
 
 
 end
