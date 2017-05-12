@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.github.com/user/orgs?access_token=<GITHUB_USER_TOKEN>
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - GitHub.com
+      Date:
+      - Fri, 12 May 2017 05:33:56 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Status:
+      - 200 OK
+      X-Ratelimit-Limit:
+      - '5000'
+      X-Ratelimit-Remaining:
+      - '4883'
+      X-Ratelimit-Reset:
+      - '1494567604'
+      Cache-Control:
+      - private, max-age=60, s-maxage=60
+      Vary:
+      - Accept, Authorization, Cookie, X-GitHub-OTP
+      - Accept-Encoding
+      Etag:
+      - W/"0e1ca64986ceb62077a044182a7915f8"
+      X-Oauth-Scopes:
+      - admin:gpg_key, admin:org, admin:org_hook, admin:public_key, admin:repo_hook,
+        delete_repo, gist, notifications, repo, user
+      X-Accepted-Oauth-Scopes:
+      - admin:org, read:org, repo, user, write:org
+      X-Github-Media-Type:
+      - github.v3; format=json
+      Access-Control-Expose-Headers:
+      - ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset,
+        X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - default-src 'none'
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubdomains; preload
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - deny
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Served-By:
+      - 2d7a5e35115884240089368322196939
+      X-Github-Request-Id:
+      - C2BC:02A8:8A12B61:B6B320D:59154944
+    body:
+      encoding: ASCII-8BIT
+      string: '[{"login":"errrrrrrrrrin","id":28642028,"url":"https://api.github.com/orgs/errrrrrrrrrin","repos_url":"https://api.github.com/orgs/errrrrrrrrrin/repos","events_url":"https://api.github.com/orgs/errrrrrrrrrin/events","hooks_url":"https://api.github.com/orgs/errrrrrrrrrin/hooks","issues_url":"https://api.github.com/orgs/errrrrrrrrrin/issues","members_url":"https://api.github.com/orgs/errrrrrrrrrin/members{/member}","public_members_url":"https://api.github.com/orgs/errrrrrrrrrin/public_members{/member}","avatar_url":"https://avatars1.githubusercontent.com/u/28642028?v=3","description":null},{"login":"maybewecanhavegoats","id":28642147,"url":"https://api.github.com/orgs/maybewecanhavegoats","repos_url":"https://api.github.com/orgs/maybewecanhavegoats/repos","events_url":"https://api.github.com/orgs/maybewecanhavegoats/events","hooks_url":"https://api.github.com/orgs/maybewecanhavegoats/hooks","issues_url":"https://api.github.com/orgs/maybewecanhavegoats/issues","members_url":"https://api.github.com/orgs/maybewecanhavegoats/members{/member}","public_members_url":"https://api.github.com/orgs/maybewecanhavegoats/public_members{/member}","avatar_url":"https://avatars1.githubusercontent.com/u/28642147?v=3","description":null}]'
+    http_version: 
+  recorded_at: Fri, 12 May 2017 05:33:57 GMT
+recorded_with: VCR 3.0.3
